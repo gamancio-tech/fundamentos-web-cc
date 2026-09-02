@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Formulário Html</title>
+</head>
+<body>
+    <header>
+        <h3>Formulários e Inputs</h3>
+    </header>
+
+    <main>
+        <form id="registerForm" method="post">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required autofocus/>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" placeholder="algo@algo.algo" id="email" name="email" required/>
+            <br>
+            <label for="password">Informe sua senha: </label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                minlength="8" 
+                required
+            />
+            <br>
+            <br>
+            <input 
+                type="cpf" 
+                id="cpf" 
+                name="cpf" 
+                placeholder="000.000.000-00" 
+                required 
+                pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                title="Digite no formato: 000.000.000-00"
+            >
+            <br>
+            
+            <br>
+            <label for="message">Informe sua mensagem</label>
+            <br>
+            <textarea id="message" name="message" rows="4" cols="30"></textarea>
+            <br>
+            <label for="evento">Selecione o evento escolhido</label>
+            <br>
+            <select name="evento" id="evento">
+                <option value="rock">Show de Rock</option>
+                <option value="sertanejo">Modão</option>
+                <option value="teatro">Teatro</option>
+                <option value="palestra">Palestra</option>
+            </select>
+            <br>
+            <br>
+            
+            <label><input type="radio" name="pagamento" required> Pix</label>
+            <label><input type="radio" name="pagamento"> Cartão</label>
+
+            <br>
+            <input type="date">
+            <br>
+            <input type="file">
+            <br>
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                Aceito os termos
+            </label>
+            <br>
+
+            <br>
+            <input type="submit" value="Cadastrar" />
+            <input type="reset" value="Limpar" />
+            <button type="button" onclick="">Cancelar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Gustavo</p>
+    </footer>
+
+
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nome').value;
+            alert(`Olá ${nome}\nCadastro enviado com sucesso!`);
+        })
+    </script>
+</body>
+</html>
