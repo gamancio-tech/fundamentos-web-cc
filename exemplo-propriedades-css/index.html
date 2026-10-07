@@ -29,6 +29,29 @@
             <p>Encontre os melhores eventos da sua cidade com poucos cliques. Consulte a <a href="#eventos">programação completa</a> abaixo.</p>
         </section>
 
+        <section id="video">
+            <video id="videoEvento" width="480" poster="../assets/arvore.jpg" controls muted autoplay loop>
+                <source  src="./video.mp4" type="video/mp4">
+                Seu navegador não suporta a execução desse vídeo.
+            </video>
+        </section>
+
+        <section>
+            <iframe 
+                src="https://www.google.com/maps?q=unifran&z=16&output=embed" 
+                width="100%"
+                height="300"
+                loading="lazy"
+                style="border: 0;"
+                allowfullscreen
+            >
+            </iframe>
+        </section>
+        
+        <section id="exemploCanvas">
+            <canvas id="seloEvento" width="200" height="200"></canvas>
+        </section>
+
         <section id="eventos">
             <h2>Próximos Eventos</h2>
             <table>
@@ -82,6 +105,25 @@
     <footer>
         <p>&copy; 2026 IngressosFácil - Todos os direitos reservados</p>
     </footer>
+    
+    <script>
+        const canvas = document.getElementById('seloEvento');
+        const ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.arc(100, 100, 90, 0, Math.PI * 2);
+        ctx.fillStyle = '#2c3e50';
+        ctx.fill();
 
+        ctx.beginPath();
+        ctx.arc(100, 100, 90, 0, Math.PI * 2);
+        ctx.strokeStyle = '#f4d03f';
+        ctx.lineWidth = 6;
+        ctx.stroke();
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 20px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('VIP', 100, 108);
+    </script>
 </body>
 </html>
